@@ -1,0 +1,143 @@
+# Define a dictionary with calorie content per 100g for each ingredient
+calorie_database = {
+    'apple': 37,
+    'apricot': 34,
+    'avocado': 134,
+    'banana': 51,
+    'blackberries': 21,
+    'blackcurrant': 24,
+    'cherries': 36,
+    'clementine': 39,
+    'coconut (fresh)': 351,
+    'cranberries': 15,
+    'cucumber': 15,
+    'dates (dried)': 227,
+    'figs (fresh)': 209,
+    'grapefruit': 25,
+    'kiwi': 42,
+    'lemon': 15,
+    'lime': 9,
+    'lychee': 36,
+    'mango': 39,
+'acorn squash': 40,
+    'artichoke': 41,
+    'asparagus': 29,
+    'beetroot': 42,
+    'broccoli': 35,
+    'brussels sprout': 51,
+    'butternut squash': 36,
+    'cabbage': 27,
+    'carrot': 10,
+    'cauliflower': 30,
+    'celery': 8,
+    'chicory': 11,
+    'corn': 54,
+    'edamame': 140,
+    'green beans': 25,
+    'iceberg lettuce': 10,
+    'kale': 30,
+    'leek': 20,
+    'mushroom': 8,
+    'onion': 43,
+    'peas': 70,
+    'peppers (red)': 21,
+    'potato': 97,
+    'pumpkin': 13,
+    'radish': 33,
+    'romaine lettuce': 15,
+    'spinach': 24,
+    'bean sprouts': 30,
+    'turnips': 23,
+    'yam': 153,
+    'zucchini / courgette': 10,
+'ahi tuna': 120,
+    'albacore': 128,
+    'catfish': 95,
+    'caviar': 250,
+    'crab': 87,
+    'eel': 184,
+    'flounder': 91,
+    'grouper': 92,
+    'herring': 158,
+    'lobster': 90,
+    'mussels': 86,
+    'oysters': 81,
+    'salmon': 183,
+    'scallops': 88,
+    'sea bass': 97,
+    'shrimp': 106,
+    'smelt': 97,
+    'squid': 92,
+    'tilapia': 96,
+    'trout': 148,
+    'whitefish': 134,
+    'yellowfin tuna': 108,
+'bacon (pork)': 240,
+    'chicken breast': 148,
+    'chicken wings': 110,
+    'chicken thighs': 133,
+    'chicken eggs': 155,
+    'duck (no skin)': 195,
+    'escargots': 90,
+    'lamb': 122,
+    'liver': 119,
+    'sausage (chicken)': 172,
+    'sausage (turkey)': 196,
+    'sausage (pork)': 318,
+    'quail eggs': 158,
+    'turkey (dark meat)': 184,
+    'turkey (white meat)': 104,
+    'venison': 157,
+    'avocado oil': 883,
+    'canola oil': 883,
+    'coconut oil': 861,
+    'corn oil': 857,
+    'olive oil': 880,
+    'peanut oil': 883,
+    'safflower oil': 883,
+    'soybean oil': 883,
+    'sunflower oil': 883,
+     'butter': 716,
+    'buttermilk (1%)': 41,
+    'cheddar cheese': 403,
+    'cottage cheese (1%)': 72,
+    'cream (heavy)': 347,
+    'cream cheese': 231,
+    'evaporated milk': 142,
+    'ghee': 899,
+    'goats milk': 71,
+    'ice cream (vanilla)': 207,
+    'kefir': 67,
+    'ricotta cheese': 174,
+    'skim milk': 38,
+    'sour cream': 214,
+    'soy milk': 46,
+    'swiss cheese': 380,
+    'yogurt, whole milk': 61,
+    'yogurt, no fat': 55,
+    'whole milk': 62,
+
+
+
+    # Add more ingredients here...
+}
+
+# Initialize total calories to zero
+total_calories = 0
+
+# Ask the user for ingredients and their weights
+while True:
+    ingredient = input("Enter an ingredient (or 'done' to finish): ").lower()
+    if ingredient == 'done':
+        break
+    if ingredient in calorie_database:
+        weight = float(input(f"Enter the weight of {ingredient} (in grams): "))
+        calorie_per_100g = calorie_database[ingredient]
+        calories = (calorie_per_100g * weight) / 100
+        total_calories += calories
+        print(f"{ingredient} contributes {calories} calories to the dish.")
+    else:
+        print(f"{ingredient} is not in the database. Please add it with its calorie content.")
+
+# Display the total calorie count of the dish
+print(f"The total calorie count of the dish is {total_calories} calories.")
